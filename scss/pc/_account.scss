@@ -1,0 +1,124 @@
+.account-page {
+	padding-block: 29px 64px;
+}
+.account-frame {
+	width: min(100%, 930px);
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 0.98fr 1.02fr;
+	gap: 17px;
+	align-items: stretch;
+}
+.account-art {
+	position: relative;
+	min-height: 440px;
+	display: flex;
+	align-items: end;
+	justify-content: start;
+	overflow: hidden;
+	isolation: isolate;
+	background: var(--hero);
+	border-radius: 29px;
+	color: var(--hero-green);
+}
+.account-image {
+	position: absolute;
+	inset: 0;
+	background: url('/img/hero.webp') 62% center / auto 102% no-repeat;
+	mix-blend-mode: multiply;
+	z-index: -1;
+}
+html[data-theme='dark'] .account-image {
+	filter: brightness(0.7);
+	mix-blend-mode: normal;
+	mask-image: radial-gradient(ellipse 72% 70% at 50% 50%, #000 35%, transparent 100%);
+}
+.account-art-title {
+	margin: 25px;
+	font-size: 30px;
+	font-weight: 730;
+	letter-spacing: -0.04em;
+}
+.account-card {
+	background: var(--paper);
+	padding: 31px 29px;
+	border: 1px solid var(--line);
+	border-radius: 27px;
+	box-shadow: var(--shadow);
+}
+.account-card h1 {
+	font-size: clamp(28px, 3.6vw, 42px);
+}
+.account-copy {
+	margin: 8px 0 17px;
+	color: var(--muted);
+}
+.provider-buttons {
+	display: grid;
+	gap: 8px;
+}
+.provider-buttons .button {
+	border-radius: 11px;
+}
+.google-mark {
+	font:
+		780 19px/1 -apple-system,
+		BlinkMacSystemFont,
+		sans-serif;
+	color: #4285f4;
+}
+.telegram-mark {
+	color: #278ad0;
+}
+.form-separator {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 14px 0;
+	color: var(--muted);
+	font-size: 12px;
+}
+.form-separator::after,
+.form-separator::before {
+	content: '';
+	flex: 1;
+	height: 1px;
+	background: var(--line);
+}
+.password-field {
+	position: relative;
+	display: block;
+}
+.password-field input {
+	padding-right: 42px;
+}
+.password-field .icon-button {
+	position: absolute;
+	inset: 4px 4px auto auto;
+	width: 33px;
+	height: 33px;
+}
+.forgot-link {
+	justify-self: end;
+}
+.auth-switch {
+	margin-top: 13px;
+	color: var(--muted);
+	text-align: center;
+	font-size: 13px;
+}
+@media (max-width: 735px) {
+	.account-art {
+		display: none;
+	}
+	.account-frame {
+		display: block;
+		width: min(100%, 460px);
+	}
+	.account-card {
+		padding: 23px 18px;
+	}
+	.account-page {
+		padding-block: 19px 40px;
+	}
+}
